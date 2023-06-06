@@ -1,0 +1,25 @@
+The main focus of this category is:
+
+the Escape sequence of the enemy-
+in the script "EscapeToHideSpotDuckState",
+the sequence is based on stages of 
+1.Be Surprised by the Player
+2.Running in the opposite direction of the player
+3.Running in a zigzag pattern 
+4.After running far enough away from the player, look for the nearest hiding place.
+5.Checking to see if there are any enemies or players nearby.
+6.Running to the Selected Hidden Location
+7.Stopping at the hidden spot
+8.If the player is nearby, he will hide in the opposite direction to avoid being seen by the player.
+9.If the enemy notices the player, the sequence will restart.
+10.If he does not notice the player after a certain amount of time, he will run to his final position to escape the area.
+
+
+
+the Alert Mechanic and the Field Of View Mechanic - 
+The Alert is divided into five stages: idea, alert, fleeing, running to hide spot, and hiding.
+that changed as a result of:
+1.what the enemy sees in specific radius and angle
+2. Will mimicking hearing depend on the player's distance from him and his rate of movement
+3. detecting a player's proximity.
+

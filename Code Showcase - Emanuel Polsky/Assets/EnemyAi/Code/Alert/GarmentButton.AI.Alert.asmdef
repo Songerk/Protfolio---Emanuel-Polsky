@@ -1,0 +1,19 @@
+{
+    "name": "GarmentButton.AI.Alert",
+    "rootNamespace": "GarmentButton.AI.Alert",
+    "references": [
+        "GarmentButton.AI.Abilities",
+        "GarmentButton.Player",
+        "DG.Tweening",
+        "UniTask"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

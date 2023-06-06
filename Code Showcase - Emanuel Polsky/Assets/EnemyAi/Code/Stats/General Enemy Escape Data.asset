@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b82846b6c31d5e4d8c9f2211a149a4a, type: 3}
+  m_Name: General Enemy Escape Data
+  m_EditorClassIdentifier: 
+  MinDistanceRunningFromPlayer: 0.5
+  MaxDistanceRunningFromPlayer: 1
+  EndWorldObjectsLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  HideLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  RadioSphereToDetecCloseHideSpot: 4
+  SpeedCharacter: 2
+  WhenToRunBackToShip: 9
+  HowMuchTimeItTakesToRun: 0
+  HowMuchTimeItTakesToSpook: 1
+  HidePositions:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  BackUpPosition:
+  - {x: -10.9, y: 0, z: 24.8}
+  - {x: -20.2, y: 0, z: -21.5}
+  SpaceShipPositions:
+  - {x: -68.1, y: 0, z: -7.14}
+  - {x: -68.1, y: 0, z: 1.48}
+  - {x: -68.1, y: 0, z: 11.1}

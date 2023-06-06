@@ -1,0 +1,19 @@
+{
+    "name": "GarmentButton.AI.StateMechine",
+    "rootNamespace": "GarmentButton.AI.StateMechine",
+    "references": [
+        "GUID:69c5f357716905645b2797634d1aa5d2",
+        "GUID:6e361aa9774adff4caae096e18d446bd",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:b0ac9dd23dbb2a14fa07ec5d1c5a137e"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
