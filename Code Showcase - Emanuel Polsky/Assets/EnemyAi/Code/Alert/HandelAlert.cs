@@ -235,5 +235,5 @@ namespace GarmentButton.AI.Alert
         }
         #endregion
 
-  
+    }
 }
