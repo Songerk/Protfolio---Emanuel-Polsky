@@ -48,7 +48,6 @@ namespace GarmentButton.AI.Abilities
             return iSPlayerInSight;
         }
 #if UNITY_EDITOR
-        #region Draw Gizmos
         public void DrawGizmosForSight(Transform transformFrom)
         {
             Handles.color = Color.yellow;
@@ -69,7 +68,15 @@ namespace GarmentButton.AI.Abilities
             Handles.color = Color.red;
             Handles.DrawLine(eyes.position, target.position);
         }
-        #endregion
+
+        private Vector3 DirFromAngle(float angleInDegrees, bool angleIsGlobal, Transform eyes)
+        {
+            if (!angleIsGlobal)
+            {
+                angleInDegrees += eyes.eulerAngles.y;
+            }
+            return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
+        }
 #endif
     }
 }

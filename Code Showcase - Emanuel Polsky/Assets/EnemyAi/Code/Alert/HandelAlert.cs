@@ -235,5 +235,40 @@ namespace GarmentButton.AI.Alert
         }
         #endregion
 
+        #region Gizmos
+
+        [SerializeField] private bool _drawGizmosOfView;
+        [SerializeField] private bool _drawGizmosOfHearing;
+        [SerializeField] private bool _drawGizmosOfHearingAtOnec;
+        [SerializeField] private bool _drawLineForSeeingTarget;
+        private void OnDrawGizmos()
+        {
+            if (_sight == null || _eyes == null) return;
+            if (_drawGizmosOfView)
+            {
+                _sight.DrawGizmosForSight(_eyes);
+                if (_drawLineForSeeingTarget)
+                {
+                    bool isTargetInSight = false;
+                    Transform target;
+                    if (!Application.isPlaying)
+                        isTargetInSight = _sight.FindVisibleTargets(_eyes, out target)[1];
+                    else
+                        target = _targetTransform;
+
+                    if (target != null && isTargetInSight)
+                    {
+                        _sight.DrawLineToTarget(_eyes, target);
+                    }
+                }
+            }
+            if (_drawGizmosOfHearing)
+                _sight.DrawGizmosForHearing(_eyes.position, _alertStats.RangeOfHearingTarget, Color.gray);
+            if (_drawGizmosOfHearingAtOnec)
+                _sight.DrawGizmosForHearing(_eyes.position, _alertStats.DistanceToAlrtedAtOnec, Color.red);
+
+        }
+
+        #endregion
     }
 }

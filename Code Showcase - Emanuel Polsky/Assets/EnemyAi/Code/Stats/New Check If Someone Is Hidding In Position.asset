@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: New Check If Someone Is Hidding In Position
   m_EditorClassIdentifier: 
   _radiusSphere: 3.57
-  _enemyLayer:
+  enemyLayer:
     serializedVersion: 2
     m_Bits: 1088

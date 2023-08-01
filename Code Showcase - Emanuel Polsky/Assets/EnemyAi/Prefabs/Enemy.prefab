@@ -366,12 +366,12 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
-  m_Acceleration: 100
+  m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 10000
+  m_AngularSpeed: 1000
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
@@ -392,6 +392,7 @@ MonoBehaviour:
   _states:
   - {fileID: 528433632709804803}
   - {fileID: 8480470555624416854}
+  - {fileID: 0}
   - {fileID: 6882045308104220385}
   IsBeingDraged: 0
   PlayerTransform: {fileID: 0}
@@ -412,7 +413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23ed1d80cc1a6d3498a4cb74ef9780ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _testingMod: 0
+  _debug: 0
   _stats: {fileID: 11400000, guid: b0ef12d82b6e42f40a14dcf58e2b44e9, type: 2}
   _collider: {fileID: 7959527227886522767}
   _checkHidddingScript: {fileID: 11400000, guid: 4c7b1a2609dcb11438314580a4981c57, type: 2}

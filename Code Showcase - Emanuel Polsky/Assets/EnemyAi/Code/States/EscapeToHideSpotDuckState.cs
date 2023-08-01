@@ -13,7 +13,7 @@ namespace GarmentButton.AI.StateMechine
     public class EscapeToHideSpotDuckState : State
     {
         [Tooltip("For Testing")]
-        [SerializeField] private bool _testingMod;
+        [SerializeField] private bool _debug;
 
         #region Required Reffrences
 
@@ -81,7 +81,7 @@ namespace GarmentButton.AI.StateMechine
         public async UniTaskVoid EscapeSequnce(CancellationToken token)
         {
 
-                await GotSpooked(token);
+                await GettingSpooked(token);
                 while (!_isReachHiddingPlace)
                 {
                     if (token.IsCancellationRequested)
@@ -93,7 +93,7 @@ namespace GarmentButton.AI.StateMechine
                         if (!await RunningAwayFromPlayer(token))
                             await RunToBackUpSpotIfReachedDeadEnd(token);
                     }
-                    Debug.Log("Finish Running");
+                    if(_debug)Debug.Log("Finish Running");
                     await RunToHideSpot(token);
 
                     MyFSM.CurrentHidePosition = _currentHidePlace;
@@ -101,8 +101,10 @@ namespace GarmentButton.AI.StateMechine
                 }
         }
 
-        async UniTask GotSpooked(CancellationToken token)
+        async UniTask GettingSpooked(CancellationToken token)
         {
+            if (_debug) Debug.Log("Started Bein Spooked");
+
             _isReachHiddingPlace = false;
 
             MyFSM.Agent.SetDestination(transform.position);
@@ -128,7 +130,7 @@ namespace GarmentButton.AI.StateMechine
             {
                 if (token.IsCancellationRequested)
                     token.ThrowIfCancellationRequested();
-                Debug.Log("is Running Away For Player");
+                if (_debug) Debug.Log("is Running Away For Player");
                 var isThereWhereToRun = IsThereWhereToRunFromPlayer();
 
                 if (!isThereWhereToRun)
@@ -142,7 +144,7 @@ namespace GarmentButton.AI.StateMechine
         }
         async UniTask RunToBackUpSpotIfReachedDeadEnd(CancellationToken token) // run to chosen position if he reach limit world
         {
-            Debug.Log("Started Running To BackUp Spot");
+            if (_debug) Debug.Log("Started Running To BackUp Spot");
             var numberPostion = Random.Range(0, _stats.BackUpPosition.Length);
 
             var backUpPosition = _stats.BackUpPosition[numberPostion];
@@ -153,7 +155,7 @@ namespace GarmentButton.AI.StateMechine
             {
                 if (token.IsCancellationRequested)
                     token.ThrowIfCancellationRequested();
-                Debug.Log("Check If Running To BackUpSpot");
+                if (_debug) Debug.Log("Check If Reached To BackUpSpot");
                 await UniTask.Delay(TimeSpan.FromSeconds(0.5f), cancellationToken: token);
             }
 
@@ -162,12 +164,17 @@ namespace GarmentButton.AI.StateMechine
         }
         async UniTask RunToHideSpot(CancellationToken token)
         {
+            if (_debug) Debug.Log("Started Running To Hide Spot");
+
             SetClosesHideSpot();
 
             while (!CheckIfReached())
             {
                 if (MyFSM.Alert.AlertState == StateOfAlert.Fleeing)
                     return;
+
+                if (_debug) Debug.Log("Checking If Reached Hide Spot");
+
                 await UniTask.Delay(TimeSpan.FromSeconds(1f), cancellationToken: token);
             }
 
@@ -179,7 +186,7 @@ namespace GarmentButton.AI.StateMechine
                     MyFSM.AnimatorBody.ResetTrigger("Down");
             }
 
-
+            if (_debug) Debug.Log("Reached toHide Spot");
             MyFSM.Alert.ForceState(StateOfAlert.Hidding);
             _isReachHiddingPlace = true;
         }
@@ -189,6 +196,7 @@ namespace GarmentButton.AI.StateMechine
         #region Calculations
         void ChooseRandomHidePlace()
         {
+            if (_debug) Debug.Log("Select Random Hide Spot");
             var numberPostion = Random.Range(0, _stats.HidePositions.Length);
             _currentHidePlace = _stats.HidePositions[numberPostion];
         }
@@ -206,7 +214,7 @@ namespace GarmentButton.AI.StateMechine
                 MyFSM.Agent.SetDestination(runTo);
 
         }
-        void RoutineFindNewHideSpot()
+        void FindNewHideSpot()
         {
             ChooseRandomHidePlace();
             CheckIsSomeOneIsHiddingThere(ChooseRandomHidePlace);
@@ -324,9 +332,7 @@ namespace GarmentButton.AI.StateMechine
         private void OnTriggerEnter(Collider other) // Incase The player Will shoot nearby the enemy
         {
             if (other.CompareTag("Bullet"))
-            {
-                RoutineFindNewHideSpot();
-            }
+                FindNewHideSpot();
         }
         private void OnDrawGizmosSelected()     //Gizmo Of Detection Closes Hide Spot
         {

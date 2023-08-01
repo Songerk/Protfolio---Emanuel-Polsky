@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MinDistanceRunningFromPlayer: 0.5
   MaxDistanceRunningFromPlayer: 1
-  EndWorldObjectsLayer:
+  EndWorldObjects:
     serializedVersion: 2
     m_Bits: 512
-  HideLayer:
+  HidePlace:
     serializedVersion: 2
     m_Bits: 256
   RadioSphereToDetecCloseHideSpot: 4
