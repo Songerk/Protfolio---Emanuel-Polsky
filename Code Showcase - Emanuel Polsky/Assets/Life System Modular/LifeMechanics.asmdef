@@ -1,0 +1,18 @@
+{
+    "name": "LifeMechanics",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d86922d9355695e46b1d2d17e2afcd4a",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:45abf871453e3b74eb5c04f76873b961"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
