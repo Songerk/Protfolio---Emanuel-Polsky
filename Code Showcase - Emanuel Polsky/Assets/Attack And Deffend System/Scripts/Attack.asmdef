@@ -3,7 +3,8 @@
     "rootNamespace": "Attack",
     "references": [
         "LifeMechanics",
-        "GarmentButton.InputControl"
+        "GarmentButton.InputControl",
+        "DG.Tweening"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

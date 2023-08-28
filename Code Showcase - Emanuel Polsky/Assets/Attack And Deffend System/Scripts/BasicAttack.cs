@@ -80,7 +80,7 @@ namespace Attack
         {
             if (_directionAttack != null)
             {
-                switch (_directionAttack.direction)
+                switch (_directionAttack.ChosenDirection)
                 {
                     case DirectionAttack.Direction.Forawd:
                         return _transformCenterBody.forward;

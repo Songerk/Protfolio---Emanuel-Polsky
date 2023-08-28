@@ -45,7 +45,7 @@ namespace Attack
 
         void AddForce(Vector3 direction ,float force)
         {
-            _rigidbody.AddForce(direction * force, ForceMode.Impulse);
+            _rigidbody.AddForce(direction * force + (Vector3.up * 1.5f), ForceMode.Impulse);
         }
 
         IEnumerator ReturnToPlace()

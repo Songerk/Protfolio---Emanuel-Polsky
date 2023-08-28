@@ -147,7 +147,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.22
+      scalar: 0.1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -2123,7 +2123,7 @@ ParticleSystem:
     speedModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4941,6 +4941,7 @@ GameObject:
   - component: {fileID: 6266533842434408330}
   - component: {fileID: 3734519911021295675}
   - component: {fileID: 877486286988119568}
+  - component: {fileID: 6933525308833352731}
   m_Layer: 6
   m_Name: MeshAndCollider-Player
   m_TagString: Untagged
@@ -5065,18 +5066,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b36e00b14b45c56408f3a902fcc5eebf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _transformCenterBody: {fileID: 7363891026239351520}
+  _attackTypeData: {fileID: 11400000, guid: 4fcaca59d4fb2b149ad76272a53ae8bc, type: 2}
+  _directionAttack: {fileID: 0}
   _attackType: 0
   _capsuleSize: 0.42
-  _boxCastDistance: 2.95
-  _transformCenterBody: {fileID: 7363891026239351520}
+  _boxCastDistance: 5
   _layerHitable:
     serializedVersion: 2
     m_Bits: 1024
   _howManyFrameLastingCounter: 5
-  _attackTypeData: {fileID: 11400000, guid: 4fcaca59d4fb2b149ad76272a53ae8bc, type: 2}
   offsetPosition: -0.83
-  _directionAttack: {fileID: 0}
   _howMuchDamge: 1
+--- !u!114 &6933525308833352731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4381162558413618168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e764ca945c420ee4ab7adb50060085ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hitDetectionScript: {fileID: 3734519911021295675}
+  _targetTimeSpeed: 0.2
+  _durationOfSlowTime: 0.2
+  _durationOfReturning: 1
 --- !u!1 &5656882602846243474
 GameObject:
   m_ObjectHideFlags: 0
